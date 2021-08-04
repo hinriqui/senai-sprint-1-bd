@@ -1,0 +1,35 @@
+CREATE DATABASE SPOTIFY;
+GO
+
+USE SPOTIFY;
+GO
+
+CREATE TABLE Plataforma(
+	idPlataforma SMALLINT PRIMARY KEY IDENTITY(1,1),
+	nomePlataforma VARCHAR(15) NOT NULL UNIQUE,
+);
+
+CREATE TABLE Album(
+	idAlbum INT PRIMARY KEY IDENTITY(1,1),
+	idPlataforma SMALLINT FOREIGN KEY REFERENCES Plataforma(idPlataforma),
+	nomeAlbum VARCHAR(15) NOT NULL,
+);
+
+CREATE TABLE Genero(
+	idGenero TINYINT PRIMARY KEY IDENTITY(1,1),
+	nomeGenero VARCHAR(15) NOT NULL UNIQUE,
+);
+
+CREATE TABLE Album_Genero(
+	idAlbum INT FOREIGN KEY REFERENCES Album(idAlbum),
+	idGenero TINYINT FOREIGN KEY REFERENCES Genero(idGenero),
+);
+
+CREATE TABLE Usuario(
+	idUsuario INT PRIMARY KEY IDENTITY(1,1),
+	idPlataforma SMALLINT FOREIGN KEY REFERENCES Plataforma(idPlataforma),
+	nome VARCHAR(15) NOT NULL,
+	email VARCHAR(30) NOT NULL UNIQUE,
+	senha VARCHAR(15) NOT NULL,
+	tipoPermissao BIT NOT NULL
+);
