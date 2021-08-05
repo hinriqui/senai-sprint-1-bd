@@ -35,6 +35,8 @@ CREATE TABLE Veiculo(
 	idEmpresa SMALLINT FOREIGN KEY REFERENCES Empresa(idEmpresa),
 	idModelo INT FOREIGN KEY REFERENCES Modelo(idModelo),
 	idCliente INT FOREIGN KEY REFERENCES Cliente(idCliente),
-	placaVeiculo VARCHAR(7) NOT NULL
+	placaVeiculo VARCHAR(7) NOT NULL,
+	dataRetirada VARCHAR(10),
+	dataDevolucao VARCHAR(10)
 );
 GO
