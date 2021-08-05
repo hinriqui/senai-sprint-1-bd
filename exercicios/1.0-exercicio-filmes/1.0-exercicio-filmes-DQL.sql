@@ -1,0 +1,4 @@
+USE CATALOGO;
+
+SELECT * FROM Genero
+SELECT * FROM Filme

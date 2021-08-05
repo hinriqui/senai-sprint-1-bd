@@ -1,0 +1,10 @@
+USE SPOTIFY
+
+SELECT * FROM Plataforma
+SELECT * FROM Album
+SELECT * FROM Genero
+SELECT * FROM Album_Genero
+SELECT * FROM Usuario
+
+
+

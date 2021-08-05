@@ -50,6 +50,7 @@ CREATE TABLE Atendimento(
 	idAtendimento INT PRIMARY KEY IDENTITY(1,1),
 	idPet INT FOREIGN KEY REFERENCES Pet(idPet),
 	idVeterinario INT FOREIGN KEY REFERENCES Veterinario(idVeterinario),
+	descricao VARCHAR(200),
 	dataAtendimento DATE NOT NULL,
 );
 GO

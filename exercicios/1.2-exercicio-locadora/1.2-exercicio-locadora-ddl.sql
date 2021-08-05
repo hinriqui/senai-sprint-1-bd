@@ -4,15 +4,8 @@ GO
 USE LOCADORA;
 GO
 
-CREATE TABLE Veiculo(
-	idVeiculo INT PRIMARY KEY IDENTITY(1,1),
-	placaVeiculo VARCHAR(7) NOT NULL
-);
-GO
-
 CREATE TABLE Empresa(
 	idEmpresa SMALLINT PRIMARY KEY IDENTITY(1,1),
-	idVeiculo INT FOREIGN KEY REFERENCES Veiculo(idVeiculo),
 	nomeEmpresa VARCHAR(20) NOT NULL UNIQUE
 );
 GO
@@ -25,7 +18,6 @@ GO
 
 CREATE TABLE Modelo(
 	idModelo INT PRIMARY KEY IDENTITY(1,1),
-	idVeiculo INT FOREIGN KEY REFERENCES Veiculo(idVeiculo),
 	idMarca SMALLINT FOREIGN KEY REFERENCES Marca(idMarca),
 	nomeModelo VARCHAR(20) NOT NULL
 );
@@ -33,8 +25,16 @@ GO
 
 CREATE TABLE Cliente(
 	idCliente INT PRIMARY KEY IDENTITY(1,1),
-	idVeiculo INT FOREIGN KEY REFERENCES Veiculo(idVeiculo),
 	nomeCliente VARCHAR(20) NOT NULL,
-	cpfCliente VARCHAR(1) NOT NULL UNIQUE
+	cpfCliente VARCHAR(10) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE Veiculo(
+	idVeiculo INT PRIMARY KEY IDENTITY(1,1),
+	idEmpresa SMALLINT FOREIGN KEY REFERENCES Empresa(idEmpresa),
+	idModelo INT FOREIGN KEY REFERENCES Modelo(idModelo),
+	idCliente INT FOREIGN KEY REFERENCES Cliente(idCliente),
+	placaVeiculo VARCHAR(7) NOT NULL
 );
 GO

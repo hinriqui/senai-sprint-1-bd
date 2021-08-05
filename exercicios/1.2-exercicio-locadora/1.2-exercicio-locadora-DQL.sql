@@ -1,0 +1,7 @@
+USE LOCADORA
+
+SELECT * FROM Veiculo
+SELECT * FROM Modelo
+SELECT * FROM Marca
+SELECT * FROM Empresa
+SELECT * FROM Cliente
