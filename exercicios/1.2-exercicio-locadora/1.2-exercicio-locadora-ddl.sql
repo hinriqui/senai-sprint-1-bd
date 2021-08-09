@@ -30,13 +30,19 @@ CREATE TABLE Cliente(
 );
 GO
 
+CREATE TABLE Aluguel(
+	idAluguel INT PRIMARY KEY IDENTITY(1,1),
+	idCliente INT FOREIGN KEY REFERENCES Cliente(idCliente),
+	dataRetirada VARCHAR(10),
+	dataDevolucao VARCHAR(10)
+);
+GO
+
 CREATE TABLE Veiculo(
 	idVeiculo INT PRIMARY KEY IDENTITY(1,1),
 	idEmpresa SMALLINT FOREIGN KEY REFERENCES Empresa(idEmpresa),
 	idModelo INT FOREIGN KEY REFERENCES Modelo(idModelo),
-	idCliente INT FOREIGN KEY REFERENCES Cliente(idCliente),
+	idAluguel INT FOREIGN KEY REFERENCES Aluguel(idAluguel),
 	placaVeiculo VARCHAR(7) NOT NULL,
-	dataRetirada VARCHAR(10),
-	dataDevolucao VARCHAR(10)
 );
 GO

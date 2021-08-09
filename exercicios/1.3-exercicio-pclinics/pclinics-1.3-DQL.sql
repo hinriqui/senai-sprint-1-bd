@@ -1,9 +1,0 @@
-USE PCLINICS;
-
-SELECT * FROM Clinica
-SELECT * FROM Veterinario
-SELECT * FROM Dono
-SELECT * FROM TipoPet
-SELECT * FROM Raca
-SELECT * FROM TipoPet
-SELECT * FROM Atendimento

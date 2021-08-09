@@ -14,6 +14,7 @@ GO
 CREATE TABLE Veterinario(
 	idVeterinario INT PRIMARY KEY IDENTITY(1,1),
 	idClinica INT FOREIGN KEY REFERENCES Clinica(idClinica),
+	CRMV VARCHAR(5) UNIQUE NOT NULL,
 	nomeVeterinario VARCHAR(30) NOT NULL,
 );
 GO

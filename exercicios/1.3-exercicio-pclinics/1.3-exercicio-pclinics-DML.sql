@@ -3,8 +3,8 @@ USE PCLINICS;
 INSERT INTO CLINICA(nomeClinica, enderecoClina)
 VALUES ('PETZONE', 25), ('Auau', 10)
 
-INSERT INTO VETERINARIO(idClinica, nomeVeterinario)
-VALUES (1, 'Vinícius'), (2, 'Jorge')
+INSERT INTO VETERINARIO(idClinica, nomeVeterinario, CRMV)
+VALUES (1, 'Vinícius', 'AAAAA'), (2, 'Jorge', 'BBBBB')
 
 INSERT INTO DONO(nomeDono)
 VALUES ('Henrique'), ('Yuri')

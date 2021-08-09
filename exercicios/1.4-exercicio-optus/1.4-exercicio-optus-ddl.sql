@@ -13,6 +13,8 @@ CREATE TABLE Album(
 	idAlbum INT PRIMARY KEY IDENTITY(1,1),
 	idPlataforma SMALLINT FOREIGN KEY REFERENCES Plataforma(idPlataforma),
 	nomeAlbum VARCHAR(15) NOT NULL,
+	anoLancamento SMALLINT,
+	nomeArtista VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Genero(
@@ -23,6 +25,7 @@ CREATE TABLE Genero(
 CREATE TABLE Album_Genero(
 	idAlbum INT FOREIGN KEY REFERENCES Album(idAlbum),
 	idGenero TINYINT FOREIGN KEY REFERENCES Genero(idGenero),
+	
 );
 
 CREATE TABLE Usuario(
